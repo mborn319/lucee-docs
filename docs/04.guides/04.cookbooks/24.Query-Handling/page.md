@@ -143,6 +143,7 @@ You can do a query with component like "Query()".
 	query=new Query(sql:"select * from Foo1890 where title=?");
 	query.setParams([{type:'varchar',value:'Susi'}]);
 	query.setDatasource('test');
+	query.setAttributes(returntype="array");
 	dump(query.execute().getResult());
 </cfscript>
 ```
@@ -151,6 +152,7 @@ In the above example we pass the sql as part of the constructor.
 
 * Use setDatasource() function to set the datasource.
 * Use setParams() function to set the param values. The value used is the same as we used in the tag.
+* Use setAttributes() function to specify that the result should be returned as an array of structs. All attributes from the [[tag-query]] tag are supported.
 
 ```query.execute()``` function returns detail of the component, ```query.execute().getResult()``` returns query result.
 
